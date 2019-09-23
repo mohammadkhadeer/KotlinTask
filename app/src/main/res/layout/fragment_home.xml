@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+
+
+
+<RelativeLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/continer">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@color/white"
+                    >
+
+
+        <ImageView
+                android:layout_width="217px"
+                android:layout_height="203px"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/logo"
+                android:id="@+id/ashartAlsomImgV"/>
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="205dp"
+                    android:id="@+id/sliderRL"
+                    android:layout_marginTop="70dp"
+                    >
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:background="@color/white">
+
+        </RelativeLayout>
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="15dp"
+                        android:layout_marginTop="185dp"
+                        android:background="@color/test">
+
+        </RelativeLayout>
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.mohammad_obeidat.pierre.view.homeFragmentFragment.Slider"
+                android:id="@+id/sliderFragment"
+                tools:layout="@layout/fragment_slider"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:id="@+id/searchPartRL"
+                    android:layout_marginTop="270dp"
+    >
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.mohammad_obeidat.pierre.view.mainScreenFragment.SearchFragment"
+                android:id="@+id/searchPartFragment"
+                tools:layout="@layout/fragment_search_part_in_home_fragment"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/subjectRL"
+                    android:layout_marginTop="390dp"
+    >
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.mohammad_obeidat.pierre.view.mainScreenFragment.SubjectFragment"
+                android:id="@+id/subjectFragment"
+                tools:layout="@layout/fragment_subject"
+        />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>

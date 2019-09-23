@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pierre</string>
+    <string name="title_home">الرئيسية</string>
+    <string name="title_profile">الملف الشخصي</string>
+    <string name="title_search">ابحث</string>
+    <string name="title_championship">مسابقة</string>
+    <string name="search_part">ماذا تريد ان تتعلم اليوم</string>
+    <string name="search_edt">اكتب ما تريد البحث عنه</string>
+    <string name="cat">المواضيع</string>
+
+</resources>

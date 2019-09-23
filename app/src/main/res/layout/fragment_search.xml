@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+>
+
+
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+
+
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/test"></RelativeLayout>
+
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@color/test">
+
+                <RelativeLayout android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                android:background="@drawable/et_bg"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                >
+
+
+                    <EditText android:layout_width="match_parent"
+                              android:layout_height="match_parent"
+                              android:textCursorDrawable="@drawable/color_cursor"
+                              android:hint="@string/search_edt"
+                              android:id="@+id/search_edt"
+                              android:textColorHint="@color/test"
+                              android:inputType="textMultiLine"
+                              android:background="@null"
+                              android:textSize="20dp"
+                              android:layout_marginRight="21dp"
+                              android:textColor="@color/black"
+                              android:maxLines="3"/>
+
+                    <ImageView
+                            android:id="@+id/search"
+                            android:layout_width="30dp"
+                            android:alpha="30"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/search"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="355dp"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="205dp"
+                            android:id="@+id/sliderRL"
+                            android:layout_marginTop="60dp"
+            >
+
+
+                <fragment
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        class="com.mohammad_obeidat.pierre.view.homeFragmentFragment.Slider"
+                        android:id="@+id/sliderFragment"
+                        tools:layout="@layout/fragment_slider"
+                />
+            </RelativeLayout>
+
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:id="@+id/horizontalRL"
+                            android:layout_marginTop="263dp"
+            >
+
+
+                <fragment
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        class="com.mohammad_obeidat.pierre.view.mainScreenFragment.horizontalRVFragment"
+                        android:id="@+id/horizontalRLFragment"
+                        tools:layout="@layout/horizontal_rv_fragment"
+                />
+            </RelativeLayout>
+
+
+
+        <RelativeLayout android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/categoryListRL"
+                        android:layout_marginTop="440dp"
+        >
+
+
+            <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    class="com.mohammad_obeidat.pierre.view.mainScreenFragment.CategoryListFragment"
+                    android:id="@+id/categoryListFragment"
+                    tools:layout="@layout/category_list_fragment"
+            />
+        </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>

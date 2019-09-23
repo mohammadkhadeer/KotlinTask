@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        tools:context=".MainActivity">
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/homeRL"
+                    android:fitsSystemWindows="true"
+
+    >
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.mohammad_obeidat.pierre.view.mainScreenFragment.FragmentHome"
+                android:id="@+id/homeFragment"
+                tools:layout="@layout/fragment_home"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/searchRL">
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.mohammad_obeidat.pierre.view.mainScreenFragment.FragmentSearch"
+                android:id="@+id/searchFragment"
+                tools:layout="@layout/fragment_search"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/cupRL">
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.mohammad_obeidat.pierre.view.mainScreenFragment.FragmentCup"
+                android:id="@+id/cupFragment"
+                tools:layout="@layout/fragment_cup"
+        />
+    </RelativeLayout>
+
+    <RelativeLayout android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    android:id="@+id/profileRL">
+
+        <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                class="com.mohammad_obeidat.pierre.view.mainScreenFragment.FragmentProfile"
+                android:id="@+id/profileFragment"
+                tools:layout="@layout/fragment_profile"
+        />
+    </RelativeLayout>
+
+
+
+
+    <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:background="?android:attr/windowBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:menu="@menu/navigation"/>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="الرئيسية"/>
+
+    <item
+            android:id="@+id/navigation_search"
+            android:icon="@drawable/search"
+            android:title="ابحث"/>
+
+    <item
+            android:id="@+id/navigation_cup"
+            android:icon="@drawable/cup"
+            android:title="مسابقة"/>
+
+    <item
+            android:id="@+id/navigation_profile"
+            android:icon="@drawable/ic_account"
+            android:title="الملف الشخصي"/>
+
+</menu>

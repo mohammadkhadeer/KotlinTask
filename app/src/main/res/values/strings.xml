@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pierre</string>
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_championship">Championship</string>
+    <string name="title_profile">Profile</string>
+    <string name="search_part">What well learn today</string>
+    <string name="search_edt">Search</string>
+    <string name="cat">Category</string>
+
+</resources>
