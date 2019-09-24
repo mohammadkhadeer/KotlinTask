@@ -11,11 +11,9 @@ import com.mohammad_obeidat.pierre.R
 import com.mohammad_obeidat.pierre.model.ImageModel
 import java.util.ArrayList
 
-/**
- * Created by Parsania Hardik on 23/04/2016.
- */
-class SlidingImage_Adapter(private val context: Context,
-                           private val imageModelArrayList: ArrayList<ImageModel>) : PagerAdapter() {
+
+class SlidingImageAdapter(private val context: Context,
+                          private val imageModelArrayList: ArrayList<ImageModel>) : PagerAdapter() {
     private val inflater: LayoutInflater
 
 

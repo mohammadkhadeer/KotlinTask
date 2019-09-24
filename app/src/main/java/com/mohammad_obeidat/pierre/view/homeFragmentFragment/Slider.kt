@@ -1,6 +1,5 @@
 package com.mohammad_obeidat.pierre.view.homeFragmentFragment
 
-import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
@@ -59,7 +58,7 @@ class Slider : Fragment(){
     private fun init(viewOfLayout: View) {
 
         mPager = viewOfLayout.findViewById(R.id.pager) as ViewPager
-        mPager!!.adapter = SlidingImage_Adapter(this!!.getActivity()!!, this.imageModelArrayList!!)
+        mPager!!.adapter = SlidingImageAdapter(this!!.getActivity()!!, this.imageModelArrayList!!)
 
         val indicator = viewOfLayout.findViewById(R.id.indicator) as CirclePageIndicator
 
