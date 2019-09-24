@@ -11,6 +11,7 @@ import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.mohammad_obeidat.pierre.R
+import com.mohammad_obeidat.pierre.utils.Functions
 import java.util.*
 
 class FragmentSearch : Fragment(){
@@ -32,33 +33,23 @@ class FragmentSearch : Fragment(){
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        changelanguage()
         viewOfLayout = inflater!!.inflate(R.layout.fragment_search, container, false)
-        searchEDT = viewOfLayout.findViewById<EditText>(R.id.search_edt)
-        sliderRL = viewOfLayout.findViewById<RelativeLayout>(R.id.sliderRL)
-        horizontalRL = viewOfLayout.findViewById<RelativeLayout>(R.id.horizontalRL)
-        categoryRL = viewOfLayout.findViewById<RelativeLayout>(R.id.categoryListRL)
+        Functions().changeLanguage(activity!!)
+        inti()
         changeFont();
 
         return viewOfLayout
     }
 
-    private fun changeFont() {
-        val typeface2 = Typeface.createFromAsset(activity!!.assets, "frutiger-lt-arabic-55-roman.ttf")
-        searchEDT.setTypeface(typeface2)
-
+    private fun inti() {
+        searchEDT = viewOfLayout.findViewById<EditText>(R.id.search_edt)
+        sliderRL = viewOfLayout.findViewById<RelativeLayout>(R.id.sliderRL)
+        horizontalRL = viewOfLayout.findViewById<RelativeLayout>(R.id.horizontalRL)
+        categoryRL = viewOfLayout.findViewById<RelativeLayout>(R.id.categoryListRL)
     }
 
-    private fun changelanguage() {
-        val lang = "ar"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        getActivity()!!.baseContext.resources.updateConfiguration(
-            config,
-            getActivity()!!.baseContext.resources.displayMetrics
-        )
+    private fun changeFont() {
+        searchEDT.setTypeface(Functions().changeFont(this!!.activity!!))
     }
 
 }

@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.mohammad_obeidat.pierre.R
+import com.mohammad_obeidat.pierre.utils.Functions
 import kotlinx.android.synthetic.main.adapter_list_category.view.*
 
 class AdapterVCategory (val categoryAL : ArrayList<String>
@@ -40,20 +41,13 @@ class AdapterVCategory (val categoryAL : ArrayList<String>
     }
 
 
-
-    val subCategoryAL: java.util.ArrayList<String> = java.util.ArrayList()
-
-
     private fun changeFont(
         context: Context,
         holder: ViewHolderV
     ) {
-        val typeface = Typeface.createFromAsset(context.assets, "frutiger-lt-arabic-55-roman.ttf")
-        holder.categoryTV.setTypeface(typeface)
-        holder.seeAllTV.setTypeface(typeface)
-
+        holder.categoryTV.setTypeface(Functions().changeFont(context))
+        holder.seeAllTV.setTypeface(Functions().changeFont(context))
     }
-
 
 }
 

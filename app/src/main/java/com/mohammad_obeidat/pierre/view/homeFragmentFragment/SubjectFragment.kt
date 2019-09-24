@@ -46,15 +46,4 @@ class SubjectFragment : Fragment(){
 
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        rv_category.apply {
-            layoutManager = LinearLayoutManager(activity)
-            rv_category.layoutManager = LinearLayoutManager(activity)
-            rv_category.layoutManager = GridLayoutManager(activity, 3)
-            adapter = AdapterH(categoryAL, activity!!.applicationContext)
-        }
-    }
-
-
 }

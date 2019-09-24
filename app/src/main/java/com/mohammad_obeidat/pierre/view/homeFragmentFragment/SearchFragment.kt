@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.RelativeLayout
 import android.widget.TextView
 import com.mohammad_obeidat.pierre.R
+import com.mohammad_obeidat.pierre.utils.Functions
 import java.util.*
 
 class SearchFragment : Fragment(){
@@ -31,32 +32,22 @@ class SearchFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        changelanguage()
+        Functions().changeLanguage(activity!!)
         viewOfLayout = inflater!!.inflate(R.layout.fragment_search_part_in_home_fragment, container, false)
-        searchTV = viewOfLayout.findViewById<TextView>(R.id.search_tv)
-        searchEDT = viewOfLayout.findViewById<EditText>(R.id.search_edt)
+        init()
         changeFont();
 
         return viewOfLayout
     }
 
-    private fun changeFont() {
-        val typeface = Typeface.createFromAsset(activity!!.assets, "frutiger-lt-arabic-55-roman.ttf")
-        searchTV.setTypeface(typeface)
-        searchEDT.setTypeface(typeface)
-
+    private fun init() {
+        searchTV = viewOfLayout.findViewById<TextView>(R.id.search_tv)
+        searchEDT = viewOfLayout.findViewById<EditText>(R.id.search_edt)
     }
 
-    private fun changelanguage() {
-        val lang = "ar"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        getActivity()!!.baseContext.resources.updateConfiguration(
-            config,
-            getActivity()!!.baseContext.resources.displayMetrics
-        )
+    private fun changeFont() {
+        searchTV.setTypeface(Functions().changeFont(activity!!))
+        searchEDT.setTypeface(Functions().changeFont(activity!!))
     }
 
 }

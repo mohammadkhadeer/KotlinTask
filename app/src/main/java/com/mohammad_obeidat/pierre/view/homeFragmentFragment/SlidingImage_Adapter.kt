@@ -14,7 +14,8 @@ import java.util.ArrayList
 /**
  * Created by Parsania Hardik on 23/04/2016.
  */
-class SlidingImage_Adapter(private val context: Context, private val imageModelArrayList: ArrayList<ImageModel>) : PagerAdapter() {
+class SlidingImage_Adapter(private val context: Context,
+                           private val imageModelArrayList: ArrayList<ImageModel>) : PagerAdapter() {
     private val inflater: LayoutInflater
 
 

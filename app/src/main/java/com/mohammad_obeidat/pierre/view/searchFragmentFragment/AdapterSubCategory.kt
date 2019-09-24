@@ -10,14 +10,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.mohammad_obeidat.pierre.R
+import com.mohammad_obeidat.pierre.utils.Functions
 import kotlinx.android.synthetic.main.adapter_sub_category.view.*
 
 class AdapterSubCategory (val context: Context
                           , val check : Int) : RecyclerView.Adapter<ViewHolderS>() {
     override fun onBindViewHolder(holder: ViewHolderS, position: Int) {
         changeFont(context,holder)
-        changeBackground(holder,position,check)    }
-
+        changeBackground(holder,position,check)
+    }
 
     @SuppressLint("ResourceAsColor")
     private fun changeBackground(
@@ -63,9 +64,7 @@ class AdapterSubCategory (val context: Context
         context: Context,
         holder: ViewHolderS
     ) {
-        val typeface = Typeface.createFromAsset(context.assets, "frutiger-lt-arabic-55-roman.ttf")
-        holder.subCategoryNameTV.setTypeface(typeface)
-
+        holder.subCategoryNameTV.setTypeface(Functions().changeFont(context))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderS {

@@ -29,10 +29,15 @@ class FragmentHome : Fragment(){
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         viewOfLayout = inflater!!.inflate(R.layout.fragment_home, container, false)
-        sliderRL = viewOfLayout.findViewById<RelativeLayout>(R.id.sliderRL)
-        searchPartRL = viewOfLayout.findViewById<RelativeLayout>(R.id.searchPartRL)
-        subjectRL = viewOfLayout.findViewById<RelativeLayout>(R.id.subjectRL)
+
+        inti()
         return viewOfLayout
     }
+
+    private fun inti() {
+        sliderRL = viewOfLayout.findViewById<RelativeLayout>(R.id.sliderRL)
+        searchPartRL = viewOfLayout.findViewById<RelativeLayout>(R.id.searchPartRL)
+        subjectRL = viewOfLayout.findViewById<RelativeLayout>(R.id.subjectRL)    }
+
 }
 

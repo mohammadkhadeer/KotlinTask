@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.mohammad_obeidat.pierre.R
+import com.mohammad_obeidat.pierre.utils.Functions
 import kotlinx.android.synthetic.main.home_adapter.view.*
 
 class AdapterH(val categoryAL : ArrayList<String>
@@ -59,8 +60,7 @@ class AdapterH(val categoryAL : ArrayList<String>
         context: Context,
         holder: ViewHolder
     ) {
-        val typeface = Typeface.createFromAsset(context.assets, "frutiger-lt-arabic-55-roman.ttf")
-        holder.categoryTV.setTypeface(typeface)
+        holder.categoryTV.setTypeface(Functions().changeFont(context))
 
     }
 

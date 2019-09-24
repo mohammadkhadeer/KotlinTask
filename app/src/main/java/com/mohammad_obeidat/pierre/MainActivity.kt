@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.WindowManager
 import android.widget.RelativeLayout
+import com.mohammad_obeidat.pierre.utils.Functions
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -19,12 +20,12 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.navigation_home -> {
                 visibilHomeFragment();
-                changeStutsBarColor()
+                changeStatusBarColor(R.color.white)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_search -> {
                 visibilSearchFragment();
-                statusBarColor();
+                changeStatusBarColor(R.color.test)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_cup -> {
@@ -48,39 +49,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        changelanguage()
+        Functions().changeLanguage(this)
         intiActivityComp()
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
     }
 
-    private fun changelanguage() {
-        val lang = "ar"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        baseContext.resources.updateConfiguration(
-            config,
-            baseContext.resources.displayMetrics
-        )
-    }
-    private fun changeStutsBarColor() {
+
+    private fun changeStatusBarColor(colorS: Int) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val window = this.window
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            window.statusBarColor = ContextCompat.getColor(this, R.color.white)
+            window.statusBarColor = ContextCompat.getColor(this, colorS)
         }
     }
 
-    private fun statusBarColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            val window = this.window
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
-            window.statusBarColor = ContextCompat.getColor(this, R.color.test)
-        }
-    }
+
     private fun intiActivityComp() {
         homeRL = findViewById<RelativeLayout>(R.id.homeRL)
         searchRL = findViewById<RelativeLayout>(R.id.searchRL)

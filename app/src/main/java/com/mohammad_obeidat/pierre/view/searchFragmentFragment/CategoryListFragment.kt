@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.mohammad_obeidat.pierre.R
+import com.mohammad_obeidat.pierre.utils.Functions
 import com.mohammad_obeidat.pierre.view.searchFragmentFragment.AdapterCategory
 import com.mohammad_obeidat.pierre.view.searchFragmentFragment.AdapterVCategory
 import kotlinx.android.synthetic.main.category_list_fragment.*
@@ -36,15 +37,19 @@ class CategoryListFragment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        changelanguage()
         viewOfLayout = inflater!!.inflate(R.layout.category_list_fragment, container, false)
-        labelTV = viewOfLayout.findViewById<TextView>(R.id.labelTV)
 
+        init()
+        Functions().changeLanguage(activity!!)
         changeFont()
         addCategory()
 
         return viewOfLayout
 
+    }
+
+    private fun init() {
+        labelTV = viewOfLayout.findViewById<TextView>(R.id.labelTV)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -67,22 +72,7 @@ class CategoryListFragment : Fragment(){
     }
 
     private fun changeFont() {
-        val typeface = Typeface.createFromAsset(activity!!.assets, "frutiger-lt-arabic-55-roman.ttf")
-        labelTV.setTypeface(typeface)
-
-    }
-
-
-    private fun changelanguage() {
-        val lang = "ar"
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        getActivity()!!.baseContext.resources.updateConfiguration(
-            config,
-            getActivity()!!.baseContext.resources.displayMetrics
-        )
+        labelTV.setTypeface(Functions().changeFont(activity!!))
     }
 
 }
