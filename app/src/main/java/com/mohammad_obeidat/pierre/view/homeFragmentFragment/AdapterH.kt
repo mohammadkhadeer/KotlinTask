@@ -2,7 +2,6 @@ package com.mohammad_obeidat.pierre.view.homeFragmentFragment
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Typeface
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.mohammad_obeidat.pierre.R
 import com.mohammad_obeidat.pierre.utils.Functions
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.home_adapter.view.*
 
 class AdapterH(val categoryAL : ArrayList<String>
@@ -32,28 +32,33 @@ class AdapterH(val categoryAL : ArrayList<String>
         if (position == 0)
         {
             holder.circleRL.setBackgroundResource(R.drawable.math_bg)
-            holder.categoryIV.setBackgroundResource(R.drawable.math)
+            loadImage(R.drawable.math,holder)
         }
         if (position == 1)
         {
             holder.circleRL.setBackgroundResource(R.drawable.bio_bg)
-            holder.categoryIV.setBackgroundResource(R.drawable.bio)
+            loadImage(R.drawable.bio,holder)
         }
         if (position == 2)
         {
             holder.circleRL.setBackgroundResource(R.drawable.generl_bg)
-            holder.categoryIV.setBackgroundResource(R.drawable.generl)
+            loadImage(R.drawable.generl,holder)
         }
         if (position == 3)
         {
             holder.circleRL.setBackgroundResource(R.drawable.phis_bg)
-            holder.categoryIV.setBackgroundResource(R.drawable.phis)
+            loadImage(R.drawable.phis,holder)
         }
         if (position == 4)
         {
             holder.circleRL.setBackgroundResource(R.drawable.chem_bg)
-            holder.categoryIV.setBackgroundResource(R.drawable.chim)
+            loadImage(R.drawable.chim,holder)
         }
+    }
+
+    private fun loadImage(imageID: Int, holder: ViewHolder) {
+        Picasso.with(context).load(imageID)
+            .into(holder.categoryIV)
     }
 
     private fun changeFont(

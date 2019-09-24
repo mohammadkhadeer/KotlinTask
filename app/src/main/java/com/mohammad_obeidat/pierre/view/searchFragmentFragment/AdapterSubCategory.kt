@@ -2,7 +2,6 @@ package com.mohammad_obeidat.pierre.view.searchFragmentFragment
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Typeface
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +10,7 @@ import android.widget.ImageView
 import android.widget.RelativeLayout
 import com.mohammad_obeidat.pierre.R
 import com.mohammad_obeidat.pierre.utils.Functions
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_sub_category.view.*
 
 class AdapterSubCategory (val context: Context
@@ -29,35 +29,40 @@ class AdapterSubCategory (val context: Context
         if (check == 0)
         {
             holder.circleRL.setBackgroundResource(R.color.math)
-            holder.categoryIV.setBackgroundResource(R.drawable.math)
+            loadImage(R.drawable.math,holder)
             holder.subCategoryNameTV.setText("الرياضيات"+"  "+position)
         }
         if (check == 1)
         {
             holder.circleRL.setBackgroundResource(R.color.bio)
-            holder.categoryIV.setBackgroundResource(R.drawable.bio)
+            loadImage(R.drawable.bio,holder)
             holder.subCategoryNameTV.setText("الأحياء" +"  "+position)
         }
         if (check == 2)
         {
             holder.circleRL.setBackgroundResource(R.color.generl)
-            holder.categoryIV.setBackgroundResource(R.drawable.generl)
+            loadImage(R.drawable.generl,holder)
             holder.subCategoryNameTV.setText("العلوم العامة"+"  "+position)
         }
         if (check == 3)
         {
             holder.circleRL.setBackgroundResource(R.color.phis)
-            holder.categoryIV.setBackgroundResource(R.drawable.phis)
+            loadImage(R.drawable.phis,holder)
             holder.subCategoryNameTV.setText("الفيزياء"+"  "+position)
 
         }
         if (check == 4)
         {
             holder.circleRL.setBackgroundResource(R.color.chim)
-            holder.categoryIV.setBackgroundResource(R.drawable.chim)
+            loadImage(R.drawable.chim,holder)
             holder.subCategoryNameTV.setText("الكيمياء"+"  "+position)
 
         }
+    }
+
+    private fun loadImage(imageID: Int, holder: ViewHolderS) {
+        Picasso.with(context).load(imageID)
+            .into(holder.categoryIV)
     }
 
     private fun changeFont(
