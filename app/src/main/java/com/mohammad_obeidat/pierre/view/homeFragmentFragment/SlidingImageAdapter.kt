@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.mohammad_obeidat.pierre.R
 import com.mohammad_obeidat.pierre.model.ImageModel
+import com.squareup.picasso.Picasso
 import java.util.ArrayList
 
 
@@ -36,7 +37,8 @@ class SlidingImageAdapter(private val context: Context,
                 .findViewById(R.id.image) as ImageView
 
 
-        imageView.setImageResource(imageModelArrayList[position].getImage_drawables())
+        Picasso.with(context).load(imageModelArrayList[position].getImage_drawables())
+            .into(imageView)
 
         view.addView(imageLayout, 0)
 

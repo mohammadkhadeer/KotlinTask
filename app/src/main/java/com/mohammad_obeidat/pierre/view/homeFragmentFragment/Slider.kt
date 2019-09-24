@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.mohammad_obeidat.pierre.R
 import com.mohammad_obeidat.pierre.model.ImageModel
+import com.squareup.picasso.Picasso
 import com.viewpagerindicator.CirclePageIndicator
 import java.util.*
 
